@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Jersey Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #FFD700;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.15);
+        }
+
+        .category h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .jersey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .jersey {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .jersey:hover {
+            transform: scale(1.05);
+        }
+
+        .jersey img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .jersey button {
+            background: #FFD700;
+            border: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .jersey button:hover {
+            background: #ffc107;
+        }
+
+        .jersey .price {
+            color: #FFD700;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Our Jersey Collection 🏆</h1>
+        <p>Choose from your favorite sports and teams</p>
+    </header>
+
+    <section class="categories">
+        <!-- Cricket -->
+        <div class="category">
+            <h2>🏏 Cricket Jerseys</h2>
+            <div class="jersey-grid">
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/71WvD53f85L._AC_UL480_FMwebp_QL65_.jpg" alt="India Jersey">
+                    <p>India T20 Jersey</p>
+                    <p class="price">$40</p>
+                    <button data-name="India T20 Jersey" data-price="40">Buy Now</button>
+                </div>
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/61A7pE2iG5L._AC_UL480_FMwebp_QL65_.jpg" alt="CSK Jersey">
+                    <p>CSK IPL Jersey</p>
+                    <p class="price">$45</p>
+                    <button data-name="CSK IPL Jersey" data-price="45">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Football -->
+        <div class="category">
+            <h2>⚽ Football Jerseys</h2>
+            <div class="jersey-grid">
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/61+4Myt1WfL._AC_UL480_FMwebp_QL65_.jpg" alt="FC Barcelona">
+                    <p>FC Barcelona</p>
+                    <p class="price">$50</p>
+                    <button data-name="FC Barcelona" data-price="50">Buy Now</button>
+                </div>
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/61ks1HTBDxL._AC_UL480_FMwebp_QL65_.jpg" alt="Real Madrid">
+                    <p>Real Madrid</p>
+                    <p class="price">$55</p>
+                    <button data-name="Real Madrid" data-price="55">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basketball -->
+        <div class="category">
+            <h2>🏀 Basketball Jerseys</h2>
+            <div class="jersey-grid">
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/61AqZgxC+0L._AC_UL480_FMwebp_QL65_.jpg" alt="Lakers">
+                    <p>LA Lakers Jersey</p>
+                    <p class="price">$60</p>
+                    <button data-name="LA Lakers Jersey" data-price="60">Buy Now</button>
+                </div>
+                <div class="jersey">
+                    <img src="https://m.media-amazon.com/images/I/51uZyy3Wq3L._AC_UL480_FMwebp_QL65_.jpg" alt="Chicago Bulls">
+                    <p>Chicago Bulls</p>
+                    <p class="price">$65</p>
+                    <button data-name="Chicago Bulls" data-price="65">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Jersey Shop. All rights reserved. | <a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.jersey button').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({name, price, qty: 1});
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+
+</body>
+</html>
